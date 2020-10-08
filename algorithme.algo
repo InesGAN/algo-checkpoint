@@ -1,0 +1,37 @@
+VAR 
+ sentence : STRING;
+ i:INTEGER;
+ nombredeChar:INTEGER;
+ nombredeMOTS:INTEGER;
+ nbVowels:INTEGER;
+ BEGIN
+//Read sentence
+ REPEAT
+ write ("ecrire une phrase");
+ read (sentence);
+ UNTIL (sentence[length(sentence)]='.');
+ //The length of the sentence (the number of characters).
+ nombredeChar:=0;
+ for i from 1 to length(sentence)-1 Do
+nombredeChar:=nombredeChar+1;
+ endfor
+ write(nombredeChar);
+ //The number of words in the sentence (assuming that the words are separated by a single space).
+ nombredeMOTS:=0;
+ For i from1 to length(sentence) Do
+ if (sentence[i]=' ') Do
+ nombredeMOTS:=nombredeMOTS+1;
+ ENDIF
+
+ ENDFor
+ write(nombredeMOTS);
+//The number of vowels in the sentence.
+ nbVowels:=0;
+ For i from 1 to length(sentence) do
+ if(sentence[i] in ('a','e','i','o','u','y')) do
+ nbVowels:=nbVowels+1;
+ ENDIF
+ ENDFor
+ write(nbVowels);
+ END
+
